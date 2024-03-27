@@ -1,0 +1,105 @@
+.HP__heading{
+    margin-top: 64px;
+}
+
+.HP__title{
+    color: #000;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+
+.HP__subtitle{
+    color: #000;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 171.429% */
+}
+
+.HP__line{
+    margin: 40px 0px 40px 0px;
+    background: #DEE2E6;
+}
+
+.HP__input{
+    width: 452px;
+    height: 38px;
+    color: #818182;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
+    padding: 8px 15px 8px 15px;
+
+}
+
+.HP__input:focus{
+    outline: none;
+}
+
+.HP__input::placeholder{
+    color: #818182;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
+}
+
+.HP__select{
+    width: 216px;
+    height: 38px;
+    color: #818182;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 8px 15px 8px 15px; 
+}
+
+.HP__search{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 79px;
+}
+
+.input__box{
+    display: flex;
+    flex-direction: column;
+}
+
+.select__box{
+    display: flex;
+    flex-direction: column;
+}
+
+.HP__label{
+    color: #818182;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
+}
+
+
+@media screen and (max-width: 765px) {
+    .HP__input{
+        width: 60.267vw;
+        font-size: 2.133vw;
+    }
+    
+    .HP__select{
+        width: 32.8vw;
+    }
+
+    .HP__title{
+        font-size: 8.533vw;
+    }
+    
+    .HP__subtitle{
+        font-size: 2.8vw;
+    }
+
+}
