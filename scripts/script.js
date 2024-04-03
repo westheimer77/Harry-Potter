@@ -29,7 +29,6 @@ let filterSelectArr = database;
 
 const render = async (arr) =>{
     arr = await arr
-    console.log(arr);
     content.innerHTML = ""
     arr.forEach((e) => {
         const article = document.createElement('article')
