@@ -2,12 +2,34 @@ import { data } from "./data.js";
 const content = document.querySelector('.HP__cards')
 const input = document.querySelector('.HP__input')
 const select = document.querySelector('.HP__select')
-const database = data;
+// const database = data;
+// let filterSelectArr = database;
+const API = "https://harry-potter-api-3a23c827ee69.herokuapp.com/api/characters"
+
+async function getData(API){
+    
+    try{
+        const res = await fetch(API)
+        if (!res.ok){
+            throw new Error(res.status);
+        }
+        return res.json();
+    } catch (err){
+        console.log(err);
+    }
+}
+
+let database = getData(API)
 let filterSelectArr = database;
 
 
 
-const render = (arr) =>{
+
+
+
+const render = async (arr) =>{
+    arr = await arr
+    console.log(arr);
     content.innerHTML = ""
     arr.forEach((e) => {
         const article = document.createElement('article')
@@ -28,13 +50,15 @@ const render = (arr) =>{
 
 render(database)
 
-function inputHandler(){
+async function inputHandler(){
+    filterSelectArr = await filterSelectArr
     const value = input.value
     const filterArr = filterSelectArr.filter((e)  => e.name.toLowerCase().includes(value.toLowerCase().trim()) || e.actor.toLowerCase().includes(value.toLowerCase().trim()))
     render(filterArr)
 }
 
-function selectHandler(){
+async function selectHandler(){
+    database = await database
     const value = select.value
     if (value == 'Free') {
         const filterArr = database.filter((e) => e.house === "")
